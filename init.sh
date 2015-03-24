@@ -1,13 +1,13 @@
 #!/bin/bash
 
-chmod 0777 ./protected/runtime/
-chmod 0777 ./protected/config/local
-chmod 0777 ./protected/modules
-chmod -R 0777 ./uploads
-chmod 0777 ./assets/
+chmod 0777 ./humhub/protected/runtime/
+chmod 0777 ./humhub/protected/config/local
+chmod 0777 ./humhub/protected/modules
+chmod 0777 ./humhub/uploads
+chmod 0777 ./humhub/assets/
 
-if [ ! -f ./protected/config/local/_settings.php ]; then
-    touch ./protected/config/local/_settings.php
-    echo "<?php\n\nreturn [];" >> ./protected/config/local/_settings.php
-    chmod 0777 ./protected/config/local/_settings.php
+if [ ! -f ./humhub/protected/config/local/_settings.php ]; then
+    touch ./humhub/protected/config/local/_settings.php
+    echo "<?php\n\nreturn [];" >> ./humhub/protected/config/local/_settings.php
+    chmod 0777 ./humhub/protected/config/local/_settings.php
 fi
