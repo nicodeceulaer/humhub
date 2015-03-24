@@ -1,0 +1,3 @@
+[submodule "humhub"]
+	path = humhub
+	url = git://github.com/serieznyi/humhub.git
