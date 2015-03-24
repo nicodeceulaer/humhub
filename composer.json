@@ -1,0 +1,22 @@
+{
+    "name": "docker-compose",
+    "type": "project",
+    "description": "",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "serieznyi",
+            "email": "serieznyi@gmail.com"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "git",
+            "url":  "https://github.com/serieznyi/humhub"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "humhub/humhub" : "*"
+    }
+}
