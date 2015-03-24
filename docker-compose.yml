@@ -1,7 +1,7 @@
 nginx:
   image: nginx
   volumes:
-   - .:/code
+   - ./humhub:/code
    - docker/nginx/conf.d:/etc/nginx/conf.d:ro
    - /etc/localtime:/etc/localtime:ro
    - docker/nginx/var/log/nginx:/var/log/nginx:rw
