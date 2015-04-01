@@ -12,7 +12,7 @@ nginx:
 fpm:
   build: docker/fpm/build
   volumes:
-   - .:/code
+   - ./humhub:/code
    - /etc/localtime:/etc/localtime:ro
    - docker/fpm/var/log/nginx:/var/log/fpm:rw
   links:
