@@ -1,10 +1,10 @@
 nginx:
   image: nginx
   volumes:
-   - ./humhub:/code
    - docker/nginx/conf.d:/etc/nginx/conf.d:ro
-   - /etc/localtime:/etc/localtime:ro
    - docker/nginx/var/log/nginx:/var/log/nginx:rw
+   - ./humhub:/code
+   - /etc/localtime:/etc/localtime:ro
   ports:
    - "8096:80"
   links:
@@ -12,9 +12,9 @@ nginx:
 fpm:
   build: docker/fpm/build
   volumes:
+   - docker/fpm/var/log/fpm:/var/log/fpm:rw
    - ./humhub:/code
    - /etc/localtime:/etc/localtime:ro
-   - docker/fpm/var/log/nginx:/var/log/fpm:rw
   links:
    - mysql
 mysql:
@@ -23,6 +23,7 @@ mysql:
    - docker/mysql/db:/var/lib/mysql
    - docker/mysql/etc/mysql:/etc/mysql:ro
    - docker/mysql/db_backup:/var/backups/mysql:rw
+   - docker/mysql/var/log/mysql:/var/log/mysql:rw
    - /etc/localtime:/etc/localtime:ro
   environment:
    MYSQL_ROOT_PASSWORD: toor
