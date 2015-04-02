@@ -12,7 +12,6 @@ nginx:
 fpm:
   build: docker/fpm/build
   volumes:
-   - docker/fpm/var/log/fpm:/var/log/fpm:rw
    - ./humhub:/var/www/humhub
    - /etc/localtime:/etc/localtime:ro
   links:
@@ -22,7 +21,6 @@ mysql:
   volumes:
    - docker/mysql/db:/var/lib/mysql
    - docker/mysql/etc/mysql:/etc/mysql:ro
-   - docker/mysql/db_backup:/var/backups/mysql:rw
    - docker/mysql/var/log/mysql:/var/log/mysql:rw
    - /etc/localtime:/etc/localtime:ro
   environment:
