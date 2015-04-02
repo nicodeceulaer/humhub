@@ -1,5 +1,8 @@
 # Created by .ignore support plugin (hsz.mobi)
-vendor
-composer.lock
 .idea
-docker/mysql/db
+docker/fpm
+!docker/fpm/build
+docker/mysql
+!docker/mysql/etc
+docker/nginx
+!docker/nginx/etc
