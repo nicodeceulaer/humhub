@@ -1,9 +1,9 @@
 nginx:
   image: nginx
   volumes:
-   - docker/nginx/conf.d:/etc/nginx/conf.d:ro
+   - docker/nginx/etc/nginx/conf.d:/etc/nginx/conf.d:ro
    - docker/nginx/var/log/nginx:/var/log/nginx:rw
-   - ./humhub:/code
+   - ./humhub:/var/www
    - /etc/localtime:/etc/localtime:ro
   ports:
    - "8096:80"
@@ -13,7 +13,7 @@ fpm:
   build: docker/fpm/build
   volumes:
    - docker/fpm/var/log/fpm:/var/log/fpm:rw
-   - ./humhub:/code
+   - ./humhub:/var/www
    - /etc/localtime:/etc/localtime:ro
   links:
    - mysql
